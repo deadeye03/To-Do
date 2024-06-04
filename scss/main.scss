@@ -56,14 +56,14 @@ body
 {
     height: 40rem;
     width: 35%;
-    background-color: rgba(255, 255, 255, 0.297);
-    backdrop-filter: blur(10px);
+    // background-color: rgba(255, 255, 255, 0.297);
+    
     // overflow-y: scroll;
     @include respond(phone){
         height: 100%;
         width: 100%;
-        
         background-color: #a72550ab;
+        backdrop-filter: blur(10px);
         padding: 1rem;
         padding-top: 6rem;
     }
@@ -82,7 +82,7 @@ body
     // TASKS CONTENT OF TODO
 
     &__task{
-        background-color: rgb(205, 199, 199,);
+        background-color: rgb(205, 199, 199);
         font-size: 2rem ;
         overflow: hidden;
         min-height: 25rem;

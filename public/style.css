@@ -41,14 +41,13 @@ body {
 .todo {
   height: 40rem;
   width: 35%;
-  background-color: rgba(255, 255, 255, 0.297);
-  backdrop-filter: blur(10px);
 }
 @media only screen and (max-width: 37.5em) {
   .todo {
     height: 100%;
     width: 100%;
     background-color: rgba(167, 37, 80, 0.6705882353);
+    backdrop-filter: blur(10px);
     padding: 1rem;
     padding-top: 6rem;
   }
