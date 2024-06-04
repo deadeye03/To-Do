@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     checkBoxes.forEach(checkBox=>{
         checkBox.addEventListener('change',async(e)=>{
             const taskId=checkBox.id.replace('checkbox-','')
-            console.log(taskId);
+            // console.log(taskId);
             
             const isCompeted=checkBox.checked;
-            console.log(isCompeted);
+            
             try {
                 let response=await fetch(`/api/v1/todo/${taskId}`,{
                     method:'PUT',

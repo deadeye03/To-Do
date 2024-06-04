@@ -15,7 +15,7 @@ exports.home=async(req,res)=>{
         let allDates=await date.find({date:{$eq:cuDate}});
 
         if (allDates.length !== 0) {
-            console.log('same date avillable')
+            // console.log('same date avillable')
         }
         else{
             await date.create({date:cuDate})
@@ -51,8 +51,8 @@ exports.addTask=async(req,res)=>{
             res.redirect('/api/v1/todo')
         } catch (error) {
             if (error.code === 11000) {
-                console.log('you enter dupicate task ')
-                // res.render('list', {listTitle:toDay,newTask:allTasks, errorMessage: 'This task is already in your todo list!' }); 
+                // console.log('you enter dupicate task ')
+                
                 res.redirect('/api/v1/todo')
             }
             
@@ -66,8 +66,7 @@ exports.updateTask=async(req,res)=>{
     let id=req.params.taskId
     let isCompeted=req.body.completed
 
-    // console.log(req.body)
-    // console.log(id);
+    
     try {
         let updatedData=await task.findByIdAndUpdate(id,{name:req.body.name,completed:isCompeted},{new:true})
 

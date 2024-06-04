@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             let id = button.getAttribute('data-id')
-            console.log(id);
+            
 
 
             let ele = document.getElementById(`input-edit-${id}`);
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             async function updatedData() {
                 editText = document.getElementById(`edit-text${id}`).value;
                 document.getElementById(`edit-text${id}`).focus();
-                console.log(editText);
+               
 
 
                 // HIDING INPUT BOXM
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                     console.log(response);
                     if (response.ok) {
-                        console.log('reload');
+                       
                         location.reload();
                     }
                     else {
@@ -64,8 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
 
-            console.log(editText)
-            console.log(ele)
+          
 
         })
 
@@ -74,4 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-console.log('hii')

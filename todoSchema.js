@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const { type } = require('os');
 const database="mongodb+srv://sourabh_database:uDKXcoKvhfDFBQzG@cluster0.liillx1.mongodb.net/toApp"
-console.log(database);
+
 async function main(){
     try {
         await mongoose.connect(database)
