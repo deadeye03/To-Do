@@ -56,12 +56,16 @@ body
 {
     height: 40rem;
     width: 35%;
-    // background-color: white;
+    background-color: rgba(255, 255, 255, 0.297);
+    backdrop-filter: blur(10px);
     // overflow-y: scroll;
     @include respond(phone){
-        height: 90%;
+        height: 100%;
         width: 100%;
+        
+        background-color: #a72550ab;
         padding: 1rem;
+        padding-top: 6rem;
     }
 
     &__header{
@@ -78,11 +82,20 @@ body
     // TASKS CONTENT OF TODO
 
     &__task{
-        background-color: rgb(205, 199, 199);
+        background-color: rgb(205, 199, 199,);
         font-size: 2rem ;
         overflow: hidden;
         min-height: 25rem;
         border-radius: .5rem;
+
+        @include respond(phone){
+            min-height: 40rem;
+            max-height: 40rem;
+            overflow-y: scroll;
+            background-color: rgb(205, 199, 199,0.6);
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
 
         &__content{
                 display: flex;
@@ -109,6 +122,8 @@ body
         }
     }
 
+//////////////////////////////////////////
+/// TODO FOOTER COMPONENT 
     &__footer{
         padding: 1rem 0;
         display: flex;
@@ -125,6 +140,10 @@ body
        text-align: center;
        font-size: 1.5rem;
        background-color: transparent;
+
+       @include respond(phone){
+        font-size: 2.5rem;
+       }
        &:focus{
            outline: none;
        }
@@ -141,6 +160,13 @@ body
         border: none;
         transition: all .2s;
         cursor: pointer;
+
+        &-add{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 3rem;
+        }
     }
 
 }
@@ -163,6 +189,7 @@ body
 
     &__add{   
         fill: rgb(34, 255, 0);
+        
     }
     &__edit{
         fill: royalblue;
@@ -193,6 +220,10 @@ body
         color: #666;
         text-decoration: line-through;
         text-decoration-color: rgb(182, 88, 88);
+
+        @include respond(phone){
+            font-weight: 300;
+        }
 
     }
 }
