@@ -13,8 +13,10 @@ exports.home=async(req,res)=>{
     try {
 
         let allDates=await date.find({date:{$eq:cuDate}});
+        await date.deleteMany({date:{$ne:(cuDate)}})
 
         if (allDates.length !== 0) {
+            
             // console.log('same date avillable')
         }
         else{
@@ -22,7 +24,7 @@ exports.home=async(req,res)=>{
             let allDeleteTask= await task.deleteMany(); //Delete all task when next day come
 
             // This is find previous day and delete the date 
-            await date.findOneAndDelete({date:{$eq:(cuDate-1)}})
+            
             res.redirect('/api/v1/todo')
         }
     } catch (error) {
